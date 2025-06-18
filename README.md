@@ -1,114 +1,115 @@
-📦 Stellar-Soroban Digital Tip Jar DApp
+# 📦 Stellar-Soroban Digital Tip Jar DApp
 
-This project is a digital tip jar / micro-payment DApp built using Stellar and Soroban. It allows content creators, developers, or artists to receive low-cost, instant donations.
+This project is a **digital tip jar / micro-payment DApp** built using **Stellar** and **Soroban**. It allows content creators, developers, or artists to receive low-cost, instant donations.
 
+---
 
-🚀 Features
+## 🚀 Features
 
-Next.js based modern frontend
+- 🧱 **Next.js based modern frontend**
+- 🛠️ **Rust / Soroban smart contract**
+- 🔑 **Freighter wallet integration**
+- 💸 **Pre-defined tipping options** (1, 5, 10 XLM)
+- 🎨 **Sleek and intuitive UI** built with Tailwind CSS
+- ⚡ **Fast, cheap transactions** (3-5s confirmations & near-zero fees via Stellar)
 
-Rust / Soroban smart contract
+---
 
-🔑 Freighter wallet integration
+## 📂 Project Structure
 
-⚡ Pre-defined tipping options (1, 5, 10 XLM)
+```
+/contracts          # Rust/Soroban smart contract code  
+/app                # Next.js frontend application  
+/components         # Reusable React components  
+/lib                # Helper functions (Soroban interaction)
+/tailwind.config.ts # Tailwind CSS configuration  
+/README.md          # Project documentation  
+```
 
-🎨 Sleek and intuitive user interface built with Tailwind CSS
+---
 
-💨 Nearly zero transaction fees and 3-5 second confirmations thanks to the Stellar network
+## 🛠️ Installation and Deployment
 
-
-📂 Project Structure
-
-/contracts      # Rust/Soroban smart contract code
-
-/app            # Next.js application code
-
-/components     # React components
-
-/lib            # Helper functions (Soroban interaction)
-
-/tailwind.config.ts # Tailwind configuration
-
-/README.md      # This document!
-
-
-🛠️ Installation and Deployment
-
-1️⃣ Clone the Repo:
-
-git clone [https://github.com/](https://github.com/)<username>/<repo_name>.git
-
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/<username>/<repo_name>.git
 cd <repo_name>
+```
 
-
-2️⃣ Install Frontend Dependencies:
-
+### 2️⃣ Install Frontend Dependencies
+```bash
 npm install
+```
 
-
-3️⃣ Compile and Deploy the Smart Contract:
-
-Navigate to the contracts directory to deploy the smart contract to the Stellar Testnet.
-
+### 3️⃣ Compile and Deploy the Smart Contract
+Navigate to the contract directory:
+```bash
 cd contracts/tip-jar
-
 soroban contract build
+```
 
-
-Next, deploy the contract. Update the benefactor and network parameters with your own wallet address:
-
+Deploy to Stellar Testnet (replace placeholders with your actual values):
+```bash
 soroban contract deploy \
-
   --wasm target/wasm32-unknown-unknown/release/tip_jar.wasm \
-
   --source <Your_Wallet_Name> \
-
   --network testnet
+```
 
+✅ After deployment, **save the Contract ID** (starts with `C...`).
 
-This command will give you a Contract ID starting with C.... Save this ID for the next step.
+---
 
-4️⃣ Start the Development Server:
-
+### 4️⃣ Start the Development Server
+Go back to the root and run:
+```bash
 npm run dev
+```
 
+---
 
-⚙️ Usage
+## ⚙️ Usage
 
-Update the Contract ID: After deploying the smart contract, paste the Contract ID you received into the CONTRACT_ID variable in the components/TipJar.tsx file.
+1. **Update Contract ID:**  
+   Replace the `CONTRACT_ID` in `components/TipJar.tsx` with your deployed Contract ID.
 
-Connect Your Wallet: Connect your Freighter wallet using the button on the main page.
+2. **Connect Wallet:**  
+   Use the "Connect Wallet" button to connect your Freighter wallet.
 
-Send a Tip: Select a tip amount and click the "Send" button to approve the transaction in your wallet.
+3. **Send a Tip:**  
+   Choose a tip amount and click **Send**. Confirm the transaction in your Freighter wallet.
 
-Every tip is recorded as a transaction on the Stellar network!
+💡 All tips are recorded on the Stellar blockchain.
 
+---
 
-📸 Screenshots
+## 📸 Screenshots
 
-You can add your application screenshots here.
+_Add your app screenshots here!_
 
+---
 
-📄 License
+## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
 
+---
 
-✨ How to Contribute:
+## ✨ How to Contribute
 
-We welcome your Pull Requests (PRs)!
+We welcome contributions!
 
-You can open issues for new feature suggestions and bug reports.
+- Open issues for bugs or feature suggestions.
+- Submit Pull Requests (PRs) with improvements or fixes.
 
+---
 
-🔗 Useful Links:
+## 🔗 Useful Links
 
-🌐 Stellar Developer Docs
+- 🌐 [Stellar Developer Docs](https://developers.stellar.org/)
+- 🧱 [Soroban Documentation](https://soroban.stellar.org/docs)
+- 💼 [Freighter Wallet](https://www.freighter.app/)
 
-🔧 Soroban Documentation
+---
 
-💼 Freighter Wallet
-
-
-Note: Before running the project, make sure you have compiled and deployed the smart contract in the contracts folder and updated the CONTRACT_ID in the frontend!
+> **Note:** Before using the app, make sure the contract is compiled & deployed, and the `CONTRACT_ID` is updated in the frontend.
