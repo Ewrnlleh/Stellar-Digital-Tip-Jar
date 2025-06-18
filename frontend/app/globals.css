@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Not: Daha önceki test için eklenen tüm @layer ve body kuralları kaldırıldı.
+  Dosyanızın sadece bu üç satırı içermesi gerekiyor.
+*/
