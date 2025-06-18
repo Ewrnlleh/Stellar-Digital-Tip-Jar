@@ -58,6 +58,8 @@ Send a Tip: Select a tip amount and click the "Send" button to approve the trans
 Every tip is recorded as a transaction on the Stellar network!
 
 📸 Screenshots
+You can add your application screenshots here.
+
 📄 License
 This project is licensed under the MIT License.
 
